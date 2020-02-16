@@ -56,7 +56,7 @@ function Register() {
                   variant="outlined"
                   className="login_input"
                 />
-                <div className="checkbox_row">
+                <div className="checkbox_row mt-3 mb-3">
                   <Checkbox
                     value="secondary"
                     color="primary"
@@ -70,7 +70,7 @@ function Register() {
                 </div>
               </div>
               <div className="login_btn">
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" fullWidth>
                   Register
                 </Button>
               </div>

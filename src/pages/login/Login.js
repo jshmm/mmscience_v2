@@ -34,7 +34,7 @@ function Login() {
                 />
               </div>
               <div className="login_btn">
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" fullWidth>
                   Login
                 </Button>
               </div>

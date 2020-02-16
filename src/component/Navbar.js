@@ -16,10 +16,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
-import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import { css } from '@emotion/core';
 import items from './_itemList';
 
 const drawerWidth = 240;
@@ -36,6 +34,8 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -110,7 +110,7 @@ export default function AppDrawer() {
         }}>
         <Toolbar>
           <IconButton
-            color="secondary"
+            color="primary"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -119,23 +119,16 @@ export default function AppDrawer() {
           </IconButton>
           <Typography
             variant="h6"
+            color="primary"
             noWrap
-            className={classes.title}
-            css={css`
-              @media screen and (max-width: 700px) {
-                text-align: center;
-              }
-            `}>
+            className={classes.title}>
             <Link to="/" alt="home" aria-label="home">
               MM Science
             </Link>
           </Typography>
-
-          <Link to="/search/" alt="mmscience about" aria-label="search">
-            <Button color="inherit" aria-label="searchIcon">
-              <SearchIcon />
-            </Button>
-          </Link>
+          <Button variant="text" color="primary" aria-label="searchIcon">
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
