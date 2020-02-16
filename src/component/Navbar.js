@@ -83,7 +83,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function PersistentDrawerLeft() {
+export default function AppDrawer() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -106,16 +106,15 @@ export default function PersistentDrawerLeft() {
         })}
         style={{
           boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.05)',
-          backgroundColor: 'var(--appBar-bg)',
+          backgroundColor: 'white',
         }}>
         <Toolbar>
           <IconButton
-            color="inherit"
+            color="secondary"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
-            style={{ color: 'var(--appBar-text)' }}>
+            className={clsx(classes.menuButton, open && classes.hide)}>
             <MenuIcon />
           </IconButton>
           <Typography
@@ -127,20 +126,12 @@ export default function PersistentDrawerLeft() {
                 text-align: center;
               }
             `}>
-            <Link
-              to="/"
-              style={{ fontFamily: 'Acme', color: 'var(--appBar-text)' }}
-              alt="home"
-              aria-label="home">
+            <Link to="/" alt="home" aria-label="home">
               MM Science
             </Link>
           </Typography>
 
-          <Link
-            to="/search/"
-            style={{ color: 'var(--appBar-text)' }}
-            alt="mmscience about"
-            aria-label="search">
+          <Link to="/search/" alt="mmscience about" aria-label="search">
             <Button color="inherit" aria-label="searchIcon">
               <SearchIcon />
             </Button>
@@ -180,8 +171,8 @@ export default function PersistentDrawerLeft() {
         <Divider />
         <List>
           {items.itemLists.map((item, index) => (
-            // eslint-disable-next-line react/no-array-index-key
             <Link
+              // eslint-disable-next-line react/no-array-index-key
               key={index}
               to={item.route}
               alt={item.title}
