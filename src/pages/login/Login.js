@@ -23,13 +23,11 @@ function Login() {
               </Typography>
               <div className="input_form">
                 <TextField
-                  id="standard-basic"
                   label="Username or Email"
                   variant="outlined"
                   className="login_input"
                 />
                 <TextField
-                  id="standard-basic"
                   label="Password"
                   variant="outlined"
                   className="login_input"

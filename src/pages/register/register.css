@@ -1,0 +1,24 @@
+.login_form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+.login_input {
+  width: 100%;
+  margin: 10px 0 10px 0 !important;
+}
+.login_btn {
+  text-align: center;
+  margin: 10px auto;
+}
+.checkbox_row {
+  display: flex;
+  flex-direction: row;
+}
+.checkbox {
+  padding-top: 0 !important;
+}
+.bold {
+  font-weight: bold;
+}
