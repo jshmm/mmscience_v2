@@ -1,23 +1,28 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
+import {
+  Drawer,
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  List,
+  Typography,
+  Avatar,
+  Divider,
+  IconButton,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Button,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
-import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import TelegramIcon from '@material-ui/icons/Telegram';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import items from './_itemList';
 
 const drawerWidth = 240;
@@ -126,8 +131,15 @@ export default function AppDrawer() {
               MM Science
             </Link>
           </Typography>
-          <Button variant="text" color="primary" aria-label="searchIcon">
-            Login
+          <Button variant="text" color="primary">
+            <NotificationsIcon color="primary" />
+          </Button>
+          <Button variant="text" color="primary">
+            <TelegramIcon color="primary" />
+          </Button>
+
+          <Button variant="text" color="primary">
+            <Avatar alt="Travis Howard" src="/photo/me.jpg" />
           </Button>
         </Toolbar>
       </AppBar>

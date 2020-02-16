@@ -31,6 +31,7 @@ function Login() {
                   label="Password"
                   variant="outlined"
                   className="login_input"
+                  type="password"
                 />
               </div>
               <div className="login_btn">

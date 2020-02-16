@@ -55,6 +55,7 @@ function Register() {
                   label="Password"
                   variant="outlined"
                   className="login_input"
+                  type="password"
                 />
                 <div className="checkbox_row mt-3 mb-3">
                   <Checkbox
