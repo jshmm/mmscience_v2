@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
 import {
   Typography,
   TextField,
@@ -6,10 +7,13 @@ import {
   Divider,
   Checkbox,
 } from '@material-ui/core';
+import { userActions } from '../../actions/users';
 import Layout from '../../component/Layout';
 import './register.css';
 
 function Register() {
+  const state = useSelector(state => state.user);
+  const dispatch = useDispatch();
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -25,8 +29,14 @@ function Register() {
 
   const onRegister = () => {
     const { name, email, education, address, password } = values;
-    console.log('ok');
-    // setValues(values)
+    const payload = {
+      name,
+      email,
+      education,
+      address,
+      password,
+    };
+    dispatch(userActions.register(payload));
   };
 
   return (
