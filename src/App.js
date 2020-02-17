@@ -15,13 +15,9 @@ function App() {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/login" component={Login} />
         <Route path="/register" component={Register} />
-        <PrivateRoute
-          path="/feed"
-          component={FeedList}
-          isAuthenticated={auth}
-        />
+        <PrivateRoute path="/" component={FeedList} isAuthenticated={auth} />
         <PrivateRoute
           path="/topics"
           component={Topics}

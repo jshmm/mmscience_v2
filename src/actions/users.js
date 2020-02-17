@@ -12,6 +12,13 @@ function register(data) {
   };
 }
 
+function login(data) {
+  return dispatch => {
+    userServices.login(data);
+  };
+}
+
 export const userActions = {
   register,
+  login,
 };
