@@ -1,6 +1,7 @@
 {
   "name": "mmscience_v2",
   "version": "0.1.0",
+  "proxy": "http://localhost:8080/api",
   "private": true,
   "dependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -26,6 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "dev": "run-p server start",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
   },
   "eslintConfig": {
