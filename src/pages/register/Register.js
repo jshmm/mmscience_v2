@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Typography,
   TextField,
@@ -10,6 +10,25 @@ import Layout from '../../component/Layout';
 import './register.css';
 
 function Register() {
+  const [values, setValues] = useState({
+    name: '',
+    email: '',
+    education: '',
+    address: '',
+    password: '',
+  });
+
+  const onInputChange = e => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  const onRegister = () => {
+    const { name, email, education, address, password } = values;
+    console.log('ok');
+    // setValues(values)
+  };
+
   return (
     <Layout>
       <div style={{ marginTop: '120px' }}>
@@ -29,33 +48,48 @@ function Register() {
               </Typography>
               <div className="input_form">
                 <TextField
+                  name="name"
                   label="Full name"
                   variant="outlined"
                   className="login_input"
+                  onChange={onInputChange}
+                  value={values.name}
                 />
                 <TextField
+                  name="email"
                   label="Email"
                   variant="outlined"
                   className="login_input"
+                  onChange={onInputChange}
+                  value={values.email}
                 />
                 <TextField
+                  name="education"
                   label="Education"
                   variant="outlined"
                   className="login_input"
+                  onChange={onInputChange}
+                  value={values.education}
                 />
                 <TextField
+                  name="address"
                   label="Address"
                   variant="outlined"
                   className="login_input"
+                  onChange={onInputChange}
+                  value={values.address}
                 />
                 <div className="mt-3 mb-3">
                   <Divider />
                 </div>
                 <TextField
+                  name="password"
                   label="Password"
                   variant="outlined"
                   className="login_input"
                   type="password"
+                  onChange={onInputChange}
+                  value={values.password}
                 />
                 <div className="checkbox_row mt-3 mb-3">
                   <Checkbox
@@ -71,7 +105,11 @@ function Register() {
                 </div>
               </div>
               <div className="login_btn">
-                <Button variant="contained" color="primary" fullWidth>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  onClick={onRegister}>
                   Register
                 </Button>
               </div>
